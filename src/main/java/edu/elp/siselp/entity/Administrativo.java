@@ -8,7 +8,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "administrador")
 @PrimaryKeyJoinColumn(referencedColumnName="idpersona")
-public class Administrativo {
+public class Administrativo extends Persona{
 
     @Column(name = "area_labor",length = 50, nullable = false)
     private String areaLabor;
