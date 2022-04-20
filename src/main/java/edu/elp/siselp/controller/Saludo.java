@@ -21,6 +21,10 @@ public class Saludo {
     public List<Persona> listaPersona() {
         return this.personaService.listaPersonas();
     }
+    @GetMapping("/buscarPersona")
+    public Persona buscarPersona(@RequestParam("dni") String dni) {
+        return this.personaService.obtenerPersonaByDni(dni);
+    }
 
 
     @GetMapping("/saludo")
