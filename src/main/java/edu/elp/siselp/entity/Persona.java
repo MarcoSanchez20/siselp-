@@ -37,6 +37,22 @@ public class Persona {
     @Column(name = "fecha_nacimiento")
     private Date fechaNacimiento;
 
+
+    @Override
+    public String toString() {
+        return "Persona{" +
+                "idpersona=" + idpersona +
+                ", nombre='" + nombre + '\'' +
+                ", apellido='" + apellido + '\'' +
+                ", edad='" + edad + '\'' +
+                ", sexo='" + sexo + '\'' +
+                ", dni='" + dni + '\'' +
+                ", direccion='" + direccion + '\'' +
+                ", telefono='" + telefono + '\'' +
+                ", fechaNacimiento=" + fechaNacimiento +
+                '}';
+    }
+
     public Persona() {
     }
 
