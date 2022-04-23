@@ -19,6 +19,14 @@ public class Administrativo extends Persona{
     public Administrativo() {
     }
 
+    @Override
+    public String toString() {
+        return "Administrativo{" +
+                "areaLabor='" + areaLabor + '\'' +
+                ", codAdmin='" + codAdmin + '\'' +
+                '}';
+    }
+
     public String getAreaLabor() {
         return areaLabor;
     }

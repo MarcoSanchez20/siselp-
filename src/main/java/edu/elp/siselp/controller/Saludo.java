@@ -1,6 +1,13 @@
 package edu.elp.siselp.controller;
 
+import edu.elp.siselp.dao.IAdministrativoDao;
+import edu.elp.siselp.entity.Administrativo;
+import edu.elp.siselp.entity.Docente;
+import edu.elp.siselp.entity.Estudiante;
 import edu.elp.siselp.entity.Persona;
+import edu.elp.siselp.service.IAdministrativoService;
+import edu.elp.siselp.service.IDocenteService;
+import edu.elp.siselp.service.IEstudianteService;
 import edu.elp.siselp.service.IPersonaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,6 +20,37 @@ import java.util.List;
 @RestController
 @RequestMapping("index")
 public class Saludo {
+
+    @Autowired
+    private IAdministrativoService administrativoService;
+
+    @GetMapping("/listaAdministrativo")
+    public List<Administrativo>listaAdministrativo(){
+        return this.administrativoService.listaAdministrativo();
+    }
+
+
+    @Autowired
+    private IEstudianteService estudianteService;
+
+    @GetMapping("/listaEstudiantes")
+    public List<Estudiante>listaEstudiantes(){
+        return this.estudianteService.listaEstudiantes();
+    }
+    @GetMapping("/buscarEstudiante")
+    public Estudiante buscarEstudiante(@RequestParam("codigo") String codigo) {
+        return this.estudianteService.obtenerEstudianteByCodigo(codigo);
+    }
+
+
+    @Autowired
+    private IDocenteService docenteService;
+
+    @GetMapping("/listaDocentes")
+    public List<Docente>listaDocente(){
+        return this.docenteService.listaDocentes();
+    }
+
 
     @Autowired
     private IPersonaService personaService;

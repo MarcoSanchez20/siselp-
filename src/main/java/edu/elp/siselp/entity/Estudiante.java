@@ -23,6 +23,15 @@ public class Estudiante extends Persona {
     public Estudiante() {
     }
 
+    @Override
+    public String toString() {
+        return "Estudiante{" +
+                "codigo='" + codigo + '\'' +
+                ", serie='" + serie + '\'' +
+                ", estadoEgreso='" + estadoEgreso + '\'' +
+                '}';
+    }
+
     public String getCodigo() {
         return codigo;
     }
