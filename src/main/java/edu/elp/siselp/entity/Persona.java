@@ -1,7 +1,7 @@
 package edu.elp.siselp.entity;
 
 import javax.persistence.*;
-import java.sql.Date;
+import java.util.Date;
 
 @Entity
 @Table(name = "persona")
@@ -10,7 +10,7 @@ public class Persona {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "idpersona",nullable = false)
+    @Column(name = "idpersona")
     private Long idpersona;
 
     @Column(name = "nombre", length = 50, nullable = false)
@@ -22,36 +22,13 @@ public class Persona {
     @Column(name = "edad", length = 10)
     private String edad;
 
-    @Column(name = "sexo",length = 10)
     private String sexo;
-
-    @Column(name = "dni",length = 10,nullable = false)
     private String dni;
-
-    @Column(name = "direccion",length = 100, nullable = false)
     private String direccion;
-
-    @Column(name = "telefono",length = 50, nullable = false)
     private String telefono;
 
     @Column(name = "fecha_nacimiento")
     private Date fechaNacimiento;
-
-
-    @Override
-    public String toString() {
-        return "Persona{" +
-                "idpersona=" + idpersona +
-                ", nombre='" + nombre + '\'' +
-                ", apellido='" + apellido + '\'' +
-                ", edad='" + edad + '\'' +
-                ", sexo='" + sexo + '\'' +
-                ", dni='" + dni + '\'' +
-                ", direccion='" + direccion + '\'' +
-                ", telefono='" + telefono + '\'' +
-                ", fechaNacimiento=" + fechaNacimiento +
-                '}';
-    }
 
     public Persona() {
     }
@@ -141,5 +118,19 @@ public class Persona {
 
     public void setFechaNacimiento(Date fechaNacimiento) {
         this.fechaNacimiento = fechaNacimiento;
+    }
+
+    @Override
+    public String toString() {
+        return
+                "idpersona=" + idpersona +
+                        ", nombre='" + nombre + '\'' +
+                        ", apellido='" + apellido + '\'' +
+                        ", edad='" + edad + '\'' +
+                        ", sexo='" + sexo + '\'' +
+                        ", dni='" + dni + '\'' +
+                        ", direccion='" + direccion + '\'' +
+                        ", telefono='" + telefono + '\'' +
+                        ", fechaNacimiento=" + fechaNacimiento;
     }
 }

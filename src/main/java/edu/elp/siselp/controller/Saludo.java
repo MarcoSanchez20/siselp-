@@ -30,17 +30,6 @@ public class Saludo {
     }
 
 
-    @Autowired
-    private IEstudianteService estudianteService;
-
-    @GetMapping("/listaEstudiantes")
-    public List<Estudiante>listaEstudiantes(){
-        return this.estudianteService.listaEstudiantes();
-    }
-    @GetMapping("/buscarEstudiante")
-    public Estudiante buscarEstudiante(@RequestParam("codigo") String codigo) {
-        return this.estudianteService.obtenerEstudianteByCodigo(codigo);
-    }
 
 
     @Autowired
